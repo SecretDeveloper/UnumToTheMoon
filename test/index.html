@@ -4,9 +4,42 @@
 </head>
 <body style="background-color:white;">
 
-<div id="canvasContainer" style="width:100%; height:300px">
-	<canvas id="canvas" width="100" height="100"></canvas>
+<div id="canvasContainer" style="width:1450px; height:300px">
+	<canvas id="canvas" width="1450px" height="300px"></canvas>
 </div>
-<script src="../src/index.js"></script>
+
+
+
+
+<div style="margin-top:20px">
+<textarea id="txtValues" rows=12 cols=100>
+{"data":[
+		{"name":"Basingstoke", "miles" : 0},
+		{"name":"Carlow", "miles" : 12000},
+		{"name":"Chattanooga", "miles" : 24000},
+		{"name":"Columbia", "miles" : 36000},
+		{"name":"Dorking", "miles" : 48000},
+		{"name":"Glendale", "miles" : 60000},
+		{"name":"Portland", "miles" : 72000},
+		{"name":"US Field Offices", "miles" : 33},
+		{"name":"Worcester", "miles" : 235109.5}
+	]}
+
+</textarea>
+<input type="button" id="btnDraw" value="Draw" onclick="draw()"></input>
+<br/>
+</div>
+
+<script>
+function draw(){
+
+	var data = JSON.parse(document.getElementById("txtValues").value);
+	window.model.draw(data.data);
+}
+</script>
+
+
+
+<script src="./index.js"></script>
 </body>
 </html>
